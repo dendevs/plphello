@@ -1,8 +1,9 @@
 {
-    "name": "dendev/plpskeleton",
-    "description": "skeleton for pulpy project",
+    "name": "dendev/plphello",
+    "description": "hello for pulpy project",
     "type": "libs",
     "require": {
+        "nubs/random-name-generator": "dev-master"
     },
     "require-dev": {
     },
@@ -15,7 +16,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "DenDev\\Plpskeleton\\": "src"
+            "DenDev\\Plphello\\": "src"
         }
     }
 }
