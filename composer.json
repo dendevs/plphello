@@ -16,7 +16,8 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "DenDev\\Plphello\\": "src"
+            "DenDev\\Plphello\\": "src",
+            "DenDev\\Plphello\\Lib\\": "src\libs"
         }
     }
 }
