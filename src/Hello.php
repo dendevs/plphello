@@ -15,6 +15,6 @@ class Hello
 
     public function hello()
     {
-        return "hello" . $this->_hello_lib->get_name();
+        return "hello " . $this->_hello_lib->get_name();
     }
 }
