@@ -15,6 +15,11 @@ class HelloLib
     {
         return $this->_generator->getName();
     }
+
+    public function get_personal_name( $name )
+    {
+        return ucfirst( $name );
+    }
 }
 
 
