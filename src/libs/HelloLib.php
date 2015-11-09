@@ -1,14 +1,18 @@
 <?php
 namespace DenDev\Plphello\Lib;
+use DenDev\Plphello\Relationship;
 
-class HelloLib
+
+class HelloLib extends Relationship
 {
     private $_generator;
 
 
-    public function __construct()
+    public function __construct( $krl = false, $config = false )
     {
+        parent::__construct( $krl, $config );
         $this->_generator = new \Nubs\RandomNameGenerator\Vgng();
+        $this->_krl->log( 'logname', 'message', 'debug', array() );
     }
 
     public function get_name()

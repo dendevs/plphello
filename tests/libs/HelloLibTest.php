@@ -13,7 +13,7 @@ class HelloLibTest extends PHPUnit_Framework_TestCase
 	public function test_get_name()
 	{
 		$object = new HelloLib();
-        $this->assertInternalType('string', $object->get_name() );
+		$this->assertInternalType( 'string', $object->get_name() );
 	}
 }
 
