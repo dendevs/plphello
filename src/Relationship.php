@@ -39,7 +39,7 @@ class Relationship
         {
             $log_path = "logs/$log_name.log";
             // avoid big file
-            if( filesize( $log_path ) >= 1024 )
+            if( file_exists( $log_path ) && filesize( $log_path ) >= 1024 )
             {
                 unlink( $log_path );
             }
