@@ -5,35 +5,54 @@ use DenDev\Plphello\Config\Config;
 
 class Relationship
 {
-	protected $_krl;
-	protected $_config;
-	protected $_service;
+    protected $_krl;
+    protected $_config;
+    protected $_service;
 
 
-	public function __construct( $krl, $config )
-	{
-		$this->_set_krl( $krl );
-        $this->_set_config( $config );
-	}
-
-    public function get_service( $id_service )
+    public function __construct( $krl, $config )
     {
-        return ( $this->_krl ) ? $this->_krl->get_service( $id_service ) : false;
+        $this->_set_krl( $krl );
+        $this->_set_config( $config );
     }
 
-    public function write_log( $log_name, $message, $level, $extras )
+    public function get_service( $id_service ) // in NoKernel ?
     {
-        $service = false;
+        return $this->_krl->get_service( $id_service );
+    }
+
+    public function get_config_value( $config_name )
+    {
+        return $this->_config->get_value( $config_name );
+    }
+
+    public function write_log( $log_name, $message, $level, $extras ) // in NoKernel ?
+    {
+        $ok = false;
+
         if( $service = $this->get_service( 'logger' ) ) // 
         {
             $service->log( $log_name, $message, $level, $extras );
+            $ok = 1;
         }
         else
         {
-            echo "Service Log pas activé: ecriture dans $log_name : $message ";
+            $log_path = "logs/$log_name.log";
+            // avoid big file
+            if( filesize( $log_path ) >= 1024 )
+            {
+                unlink( $log_path );
+            }
+
+            // write
+            error_log("$level: $message ( " .  print_r( $extras, true ) . " ) ", 3, "logs/$log_name.log");
+            $ok = 2;
         }
+
+        return $ok;
     }
 
+    // -
     private function _set_krl( $krl )
     {
         if( is_object( $krl ) )
@@ -75,5 +94,10 @@ class NoKernel
     public function __call( $name, $args )
     {
         //echo "Appel de la méthode '$name' ". print_r( $args, true ). "\n";
+    }
+
+    public function get_service( $id_service )
+    {
+        return false;
     }
 }
