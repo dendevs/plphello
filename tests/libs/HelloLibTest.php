@@ -1,8 +1,9 @@
 <?php
+namespace DenDev\Plphello\Test;
 use DenDev\Plphello\Lib\HelloLib;
 
 
-class HelloLibTest extends PHPUnit_Framework_TestCase 
+class HelloLibTest extends \PHPUnit_Framework_TestCase 
 {
 	public function test_instanciate()
 	{

@@ -1,5 +1,5 @@
-# PlpSkeleton
+# PlpHello
 
-skeleton for puplpy modules project
+Hello for pulpy
 
-[![Build Status](https://travis-ci.org/dendevs/plpkernel.svg)](https://travis-ci.org/dendevs/plpkernel)
+[![Build Status](https://travis-ci.org/dendevs/plphello.svg?branch=master)](https://travis-ci.org/dendevs/plphello)

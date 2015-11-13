@@ -1,9 +1,9 @@
 <?php
 namespace DenDev\Plphello\Lib;
-use DenDev\Plphello\Relationship;
+use DenDev\Plpadaptability\Adaptability;
 
 
-class HelloLib extends Relationship
+class HelloLib extends Adaptability
 {
     private $_generator;
 

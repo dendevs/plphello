@@ -3,7 +3,8 @@
     "description": "hello for pulpy project",
     "type": "libs",
     "require": {
-        "nubs/random-name-generator": "dev-master"
+        "nubs/random-name-generator": "dev-master",
+        "dendev/plpadaptability": "dev-master"
     },
     "require-dev": {
     },
